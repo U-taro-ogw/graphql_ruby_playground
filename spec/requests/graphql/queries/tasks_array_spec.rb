@@ -18,8 +18,9 @@ RSpec.describe 'graphql currentUser' do
     QUERY
   end
 
-  before 'taskを10件作成' do
-    create_list(:task, 10)
+  before 'taskを100,000件作成' do
+    attr = (1..100000).map { { description: 'a', created_at: Time.current, updated_at: Time.current } }
+    Task.insert_all(attr)
   end
 
   it 'taskを5件返却する' do
