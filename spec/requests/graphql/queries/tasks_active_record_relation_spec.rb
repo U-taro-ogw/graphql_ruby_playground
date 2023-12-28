@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'graphql currentUser' do
+RSpec.describe 'query tasksActiveRecordRelation' do
   subject { post graphql_path, params: { query: query} }
 
   let(:query) do
